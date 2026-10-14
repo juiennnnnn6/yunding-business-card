@@ -204,6 +204,9 @@ body {
   box-shadow: 0 10px 24px rgba(6, 152, 90, .25);
   transition: background .15s, transform .1s;
 }
+.line-btn__icon { display: inline-flex; align-items: center; }
+.line-btn__icon svg { display: block; }
+.line-btn__text { display: inline-flex; align-items: center; line-height: 1; }
 .line-btn:hover { background: var(--line-d); }
 .line-btn:active { transform: scale(.985); }
 .line-btn--disabled {
