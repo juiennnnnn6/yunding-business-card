@@ -66,10 +66,10 @@
     $("phoneText").textContent = shared.phone;
   }
 
-  // ── 傳真（僅顯示，不可撥打）──────────────────────────
+  // ── 傳真（顯示在電話卡內，不可撥打）───────────────────
   if (shared.fax && shared.fax.trim()) {
     $("faxText").textContent = shared.fax.trim();
-    $("faxBlock").hidden = false;
+    $("faxLine").hidden = false;
   }
 
   // ── 地址（地圖導航）──────────────────────────────────
@@ -109,16 +109,13 @@
     lineBtn.addEventListener("click", (e) => e.preventDefault());
   }
 
-  // ── 底部：統一編號 + 版權 ─────────────────────────────
+  // ── 底部：統一編號（標題只寫一次，每家各一行）─────────
   const taxParts = companies
     .filter((c) => c.taxId)
-    .map((c) => "統一編號　" + escapeHtml(c.short || c.name || "") + " <b>" + escapeHtml(c.taxId) + "</b>");
-  $("footTax").innerHTML = taxParts.join("<br>");
-
-  const year = new Date().getFullYear();
-  const shorts = companies.map((c) => c.short || c.name).join(" ‧ ");
-  $("footText").textContent =
-    "© " + year + "　" + shorts + (cfg.companySuffix ? " " + cfg.companySuffix : "");
+    .map((c) => escapeHtml(c.short || c.name || "") + " <b>" + escapeHtml(c.taxId) + "</b>");
+  if (taxParts.length) {
+    $("footTax").innerHTML = "統一編號<br>" + taxParts.join("<br>");
+  }
 
   // ── 小工具 ───────────────────────────────────────────
   function escapeHtml(str) {

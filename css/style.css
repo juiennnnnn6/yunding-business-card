@@ -158,24 +158,12 @@ body {
 .contact__label { font-size: .9rem; color: var(--dim); }
 .contact__value { font-weight: 700; font-size: var(--fs-lg); letter-spacing: .03em; line-height: 1.3; }
 
-/* 傳真（小資訊列） */
-.fax {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 10px;
-  margin-top: -6px;
+/* 傳真（電話卡內的次要資訊列） */
+.contact__sub {
+  margin-top: 4px;
+  font-size: .98rem;
   color: var(--dim);
   letter-spacing: .03em;
-}
-.fax__label {
-  font-size: .9rem;
-  color: var(--dim);
-}
-.fax__value {
-  font-weight: 700;
-  color: var(--ink);
-  font-size: 1.1rem;
 }
 
 /* 服務項目 */
@@ -238,12 +226,6 @@ body {
   letter-spacing: .03em;
 }
 .foot__tax b { color: var(--ink); font-weight: 700; }
-.foot__copy {
-  margin-top: 6px;
-  font-size: .82rem;
-  color: #9a8f7a;
-  letter-spacing: .05em;
-}
 
 /* ── 響應式：手機 ─────────────────────────────────────── */
 @media (max-width: 480px) {
