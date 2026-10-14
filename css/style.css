@@ -4,12 +4,12 @@
    ===================================================================== */
 
 :root {
-  --ink:    #2c2821;   /* 主要文字 */
-  --dim:    #6f6657;   /* 次要文字 */
-  --gold:   #9298a0;   /* 銀線細節 */
-  --ivory:  #f5efe3;   /* 卡片象牙底 */
-  --cream:  #fbf7ef;   /* 區塊底（略亮） */
-  --edge:   #e6dcc6;   /* 細邊框 */
+  --ink:    #2a2a2c;   /* 主要文字 */
+  --dim:    #6b6b70;   /* 次要文字 */
+  --gold:   #8d939b;   /* 銀線細節 */
+  --ivory:  #ededee;   /* 卡片灰底 */
+  --cream:  #f6f6f7;   /* 區塊底（略亮） */
+  --edge:   #d6d6d9;   /* 細邊框 */
   --line:   #06985a;   /* LINE 綠 */
   --line-d: #057a48;
 
@@ -143,16 +143,16 @@ body {
   text-decoration: none;
   transition: background .15s, transform .1s;
 }
-.contact:hover { background: #f4ecdd; }
+.contact:hover { background: #e8e8ea; }
 .contact:active { transform: scale(.985); }
 .contact__icon {
   width: 48px; height: 48px;
   flex: 0 0 auto;
   border-radius: 10px;
   display: flex; align-items: center; justify-content: center;
-  background: #efe7d6;
+  background: #e3e3e6;
   color: var(--gold);
-  border: 1px solid #e3d7bd;
+  border: 1px solid #d2d2d6;
 }
 .contact__body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .contact__label { font-size: .9rem; color: var(--dim); }
@@ -184,7 +184,7 @@ body {
 .services__list li {
   font-size: 1.02rem;
   padding: 6px 0;
-  border-bottom: 1px solid #ece2cd;
+  border-bottom: 1px solid #dddde0;
 }
 
 /* LINE 按鈕 */
