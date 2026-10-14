@@ -107,10 +107,8 @@
   // ── 底部：統一編號 + 版權 ─────────────────────────────
   const taxParts = companies
     .filter((c) => c.taxId)
-    .map((c) => escapeHtml(c.short || c.name || "") + " <b>" + escapeHtml(c.taxId) + "</b>");
-  $("footTax").innerHTML = taxParts.length
-    ? "統一編號　" + taxParts.join("　‧　")
-    : "";
+    .map((c) => "統一編號　" + escapeHtml(c.short || c.name || "") + " <b>" + escapeHtml(c.taxId) + "</b>");
+  $("footTax").innerHTML = taxParts.join("<br>");
 
   const year = new Date().getFullYear();
   const shorts = companies.map((c) => c.short || c.name).join(" ‧ ");
