@@ -6,7 +6,7 @@
 :root {
   --ink:    #2c2821;   /* 主要文字 */
   --dim:    #6f6657;   /* 次要文字 */
-  --gold:   #b2924f;   /* 金線細節 */
+  --gold:   #9298a0;   /* 銀線細節 */
   --ivory:  #f5efe3;   /* 卡片象牙底 */
   --cream:  #fbf7ef;   /* 區塊底（略亮） */
   --edge:   #e6dcc6;   /* 細邊框 */
@@ -16,7 +16,7 @@
   --fs-base: 1.12rem;
   --fs-lg:   1.3rem;
 
-  --radius: 16px;
+  --radius: 26px;
   --maxw:   430px;
 }
 
