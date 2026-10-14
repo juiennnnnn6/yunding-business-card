@@ -77,6 +77,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  /* 陰影套在容器（非 img），貼著 Logo 形狀、避免 Chrome 對 img 套 filter 消失的問題 */
+  filter: drop-shadow(0 2px 2.5px rgba(40, 36, 33, .32));
 }
 .brand__logo img { height: 100%; width: auto; max-width: 100%; }
 .brand__mark {
