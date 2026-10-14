@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>允鑽 ‧ 允鼎 不鏽鋼企業社｜電子名片</title>
+  <meta name="description" content="允鑽不鏽鋼企業社、允鼎不鏽鋼企業社 — 專業白鐵不鏽鋼施工。電話、地址導航、LINE 聯繫一次掌握。" />
+  <meta name="theme-color" content="#f5efe3" />
+
+  <meta property="og:title" content="允鑽 ‧ 允鼎 不鏽鋼企業社" />
+  <meta property="og:description" content="專業白鐵不鏽鋼施工 ‧ 品質信賴" />
+  <meta property="og:type" content="website" />
+
+  <!-- 字體：Noto Serif SC -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <main class="card" id="app">
+    <!-- 頁首 -->
+    <header class="hero">
+      <h1 class="hero__title" id="siteTitle"></h1>
+      <p class="hero__tagline" id="siteTagline"></p>
+      <div class="rule"><span></span></div>
+    </header>
+
+    <!-- 兩間公司並排 -->
+    <section class="companies" id="companies" aria-label="公司資訊"></section>
+
+    <!-- 共用資訊 -->
+    <section class="shared" aria-label="聯絡與服務">
+
+      <div class="divider">聯絡方式</div>
+
+      <!-- 電話（點擊撥打） -->
+      <a class="contact" id="phoneBlock" href="#">
+        <span class="contact__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.2.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.3 1l-2.2 2.2z"/></svg>
+        </span>
+        <span class="contact__body">
+          <span class="contact__label">點擊撥打電話</span>
+          <span class="contact__value" id="phoneText"></span>
+        </span>
+      </a>
+
+      <!-- 地址（導航） -->
+      <a class="contact" id="mapBlock" href="#" target="_blank" rel="noopener">
+        <span class="contact__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="26" height="26"><path fill="currentColor" d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        </span>
+        <span class="contact__body">
+          <span class="contact__label">點擊開啟地圖導航</span>
+          <span class="contact__value" id="addressText"></span>
+        </span>
+      </a>
+
+      <!-- 服務項目 -->
+      <div class="services">
+        <h2 class="services__title">服務項目</h2>
+        <ul class="services__list" id="servicesList"></ul>
+      </div>
+
+      <!-- LINE 按鈕 -->
+      <a class="line-btn" id="lineBtn" href="#">
+        <span class="line-btn__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.6 7.4 8.4 8.1.3.1.8.2.9.5.1.3.1.6 0 .9l-.1.8c0 .2-.2 1 .8.5s5.3-3.1 7.2-5.3c1.3-1.4 1.9-2.9 1.9-5.5C21.1 5.7 16.6 2 12 2z"/></svg>
+        </span>
+        <span class="line-btn__text" id="lineBtnText">加入 LINE 聯繫</span>
+      </a>
+
+    </section>
+
+    <footer class="foot">
+      <p id="footText"></p>
+    </footer>
+  </main>
+
+  <script src="data/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
