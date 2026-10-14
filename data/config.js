@@ -5,33 +5,36 @@
 
    ★ 常見修改：
      - 服務項目：改下方 services 陣列（每個 "字串" 就是一項服務）
-     - LINE 連結：把 lineUrl 的 "" 裡填上你的 LINE 連結，例如
-                  lineUrl: "https://line.me/ti/p/你的ID"
-                  填了按鈕就會自動生效；留空則顯示「即將開放」
-     - 電話 / 地址 / 統編：直接改對應欄位的文字
+     - LINE 連結：把 lineUrl 的 "" 裡填上你的 LINE 連結
+                  填了按鈕就會生效；留空則顯示「即將開放」
+     - 電話 / 地址 / 統編 / 公司名：直接改對應欄位的文字
+     - 地圖：預設用地標名稱 mapQuery 定位；想更精準把地圖連結貼到 mapUrl
    ===================================================================== */
 
 window.SITE_CONFIG = {
 
-  // ── 頁首 ────────────────────────────────────────────────
-  // 標題可用 \n 換行（第一行公司簡稱、第二行行業別）
-  siteTitle: "允鑽‧允鼎\n不鏽鋼企業社",
+  // 標語（頁首副標）
   siteTagline: "專業白鐵不鏽鋼施工 ‧ 品質信賴",
 
-  // ── 兩間公司（各自顯示：名稱、Logo、統編）─────────────────
+  // 兩家公司共用的行業別（只顯示一次）
+  companySuffix: "不鏽鋼企業社",
+
+  // ── 兩間公司（short=短名、顯示在 Logo 旁；name=全名、用於版權列）──
   companies: [
     {
-      name: "允鼎不鏽鋼企業社",
-      taxId: "61156036",        // 統一編號
-      logoType: "image",         // image = 用圖檔
-      logoSrc: "images/yunding-logo.svg",
+      short: "允鑽",
+      name: "允鑽不鏽鋼企業社",
+      taxId: "17850315",
+      logoType: "text",                 // text = 文字型 Logo（之後有圖檔改成 image）
+      logoText: "允鑽",
+      // 之後有圖檔時：logoType 改 "image"，並加 logoSrc: "images/yunzuan-logo.svg",
     },
     {
-      name: "允鑽不鏽鋼企業社",
-      taxId: "17850315",        // 統一編號
-      logoType: "text",          // text = 用文字型 Logo（之後有圖檔可改成 image）
-      logoText: "允鑽",          // 文字型 Logo 顯示的字
-      // 之後有圖檔時：把上面 logoType 改成 "image"，並加一行 logoSrc: "images/yunzuan-logo.svg",
+      short: "允鼎",
+      name: "允鼎不鏽鋼企業社",
+      taxId: "61156036",
+      logoType: "image",                // image = 用圖檔
+      logoSrc: "images/yunding-logo.svg",
     },
   ],
 
@@ -41,11 +44,11 @@ window.SITE_CONFIG = {
     address: "高雄市大樹區瓦厝街76巷1-16號",
 
     // 地圖搜尋用的「地標名稱」——用店家名稱定位最準（對應 Google 商家）
-    // 若之後想改用精準地圖連結，把網址貼到下方 mapUrl 即可（填了就優先用 mapUrl）
+    // 若之後想改用精準地圖連結，把網址貼到下方 mapUrl（填了就優先用 mapUrl）
     mapQuery: "允鼎不鏽鋼企業社",
     mapUrl: "",
 
-    // 電話（點擊直接撥打；撥打用的號碼會自動去掉符號）
+    // 電話（點擊直接撥打）
     phone: "07-6529466",
 
     // 服務項目（★佔位，問到實際項目再替換這些文字即可）

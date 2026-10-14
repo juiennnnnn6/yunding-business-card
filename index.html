@@ -21,20 +21,15 @@
 <body>
 
   <main class="card" id="app">
-    <!-- 頁首 -->
+    <!-- 頁首：品牌組合（兩家 Logo + 短名，共用行業別只寫一次） -->
     <header class="hero">
-      <h1 class="hero__title" id="siteTitle"></h1>
+      <div class="lockup" id="lockup" aria-label="公司"></div>
       <p class="hero__tagline" id="siteTagline"></p>
       <div class="rule"><span></span></div>
     </header>
 
-    <!-- 兩間公司並排 -->
-    <section class="companies" id="companies" aria-label="公司資訊"></section>
-
     <!-- 共用資訊 -->
     <section class="shared" aria-label="聯絡與服務">
-
-      <div class="divider">聯絡方式</div>
 
       <!-- 電話（點擊撥打） -->
       <a class="contact" id="phoneBlock" href="#">
@@ -74,8 +69,10 @@
 
     </section>
 
+    <!-- 底部：統一編號 + 版權 -->
     <footer class="foot">
-      <p id="footText"></p>
+      <p class="foot__tax" id="footTax"></p>
+      <p class="foot__copy" id="footText"></p>
     </footer>
   </main>
 

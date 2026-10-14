@@ -14,49 +14,51 @@
   }
 
   const $ = (id) => document.getElementById(id);
+  const companies = cfg.companies || [];
+  const shared = cfg.shared || {};
 
-  // ── 頁首 ──────────────────────────────────────────────
-  // 標題支援 \n 換行
-  $("siteTitle").innerHTML = String(cfg.siteTitle || "")
-    .split("\n").map(escapeHtml).join("<br>");
-  $("siteTagline").textContent = cfg.siteTagline || "";
+  // ── 頁首品牌組合：兩家 Logo + 短名 ＋ 共用行業別（只一次）──
+  const lockup = $("lockup");
+  const brands = document.createElement("div");
+  brands.className = "brands";
 
-  // ── 兩間公司 ─────────────────────────────────────────
-  const companiesEl = $("companies");
-  (cfg.companies || []).forEach((c) => {
-    const card = document.createElement("article");
-    card.className = "company";
+  companies.forEach((c) => {
+    const row = document.createElement("div");
+    row.className = "brand";
 
-    // Logo
-    const logo = document.createElement("div");
-    logo.className = "company__logo";
+    const logo = document.createElement("span");
+    logo.className = "brand__logo";
     if (c.logoType === "image" && c.logoSrc) {
       const img = document.createElement("img");
       img.src = c.logoSrc;
-      img.alt = (c.name || "") + " Logo";
+      img.alt = (c.name || c.short || "") + " Logo";
       logo.appendChild(img);
     } else {
-      const t = document.createElement("span");
-      t.className = "company__logo-text";
-      t.textContent = c.logoText || c.name || "";
-      logo.appendChild(t);
+      const mark = document.createElement("span");
+      mark.className = "brand__mark";
+      mark.textContent = c.logoText || c.short || "";
+      logo.appendChild(mark);
     }
 
-    // 名稱
-    const name = document.createElement("h2");
-    name.className = "company__name";
-    name.textContent = c.name || "";
+    const nm = document.createElement("span");
+    nm.className = "brand__name";
+    nm.textContent = c.short || c.name || "";
 
-    // 統編
-    const tax = document.createElement("p");
-    tax.className = "company__tax";
-    tax.innerHTML = "統一編號　<b>" + escapeHtml(c.taxId || "") + "</b>";
-
-    card.append(logo, name, tax);
-    companiesEl.appendChild(card);
+    row.append(logo, nm);
+    brands.appendChild(row);
   });
 
-  const shared = cfg.shared || {};
+  lockup.appendChild(brands);
+
+  if (cfg.companySuffix) {
+    const suffix = document.createElement("div");
+    suffix.className = "suffix";
+    suffix.textContent = cfg.companySuffix;
+    lockup.appendChild(suffix);
+  }
+
+  // 副標
+  $("siteTagline").textContent = cfg.siteTagline || "";
 
   // ── 電話（點擊撥打）──────────────────────────────────
   if (shared.phone) {
@@ -96,17 +98,24 @@
     lineBtn.setAttribute("target", "_blank");
     lineBtn.setAttribute("rel", "noopener");
   } else {
-    // 尚未提供連結：不亂連，顯示為停用狀態
     lineBtn.classList.add("line-btn--disabled");
     lineBtn.removeAttribute("href");
     $("lineBtnText").textContent = "LINE 即將開放";
     lineBtn.addEventListener("click", (e) => e.preventDefault());
   }
 
-  // ── 底部版權 ─────────────────────────────────────────
+  // ── 底部：統一編號 + 版權 ─────────────────────────────
+  const taxParts = companies
+    .filter((c) => c.taxId)
+    .map((c) => escapeHtml(c.short || c.name || "") + " <b>" + escapeHtml(c.taxId) + "</b>");
+  $("footTax").innerHTML = taxParts.length
+    ? "統一編號　" + taxParts.join("　‧　")
+    : "";
+
   const year = new Date().getFullYear();
-  const names = (cfg.companies || []).map((c) => c.name).join(" ‧ ");
-  $("footText").textContent = "© " + year + "　" + names;
+  const shorts = companies.map((c) => c.short || c.name).join(" ‧ ");
+  $("footText").textContent =
+    "© " + year + "　" + shorts + (cfg.companySuffix ? " " + cfg.companySuffix : "");
 
   // ── 小工具 ───────────────────────────────────────────
   function escapeHtml(str) {

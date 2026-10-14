@@ -1,6 +1,6 @@
 /* =====================================================================
    允鑽 / 允鼎 電子名片 — 樣式
-   風格：象牙暖底 ‧ 襯線 ‧ 金線細節 ‧ 徽章同底色＋灰色陰影框
+   風格：象牙暖底 ‧ 襯線 ‧ 金線細節 ‧ Logo 徽章同底色＋灰色陰影框
    ===================================================================== */
 
 :root {
@@ -13,10 +13,8 @@
   --line:   #06985a;   /* LINE 綠 */
   --line-d: #057a48;
 
-  /* 字級（偏大、好讀） */
   --fs-base: 1.12rem;
   --fs-lg:   1.3rem;
-  --fs-xl:   1.7rem;
 
   --radius: 16px;
   --maxw:   430px;
@@ -49,19 +47,69 @@ body {
   box-shadow: 0 20px 56px rgba(80, 66, 40, .18);
 }
 
-/* ── 頁首 ─────────────────────────────────────────────── */
+/* ── 頁首：品牌組合 ───────────────────────────────────── */
 .hero {
   text-align: center;
-  padding: clamp(30px, 6vw, 40px) 24px clamp(20px, 4vw, 26px);
+  padding: clamp(28px, 6vw, 38px) 22px clamp(18px, 4vw, 24px);
 }
-.hero__title {
-  font-size: clamp(1.7rem, 6vw, 2rem);
+.lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.brands {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+/* Logo 徽章：底色與背景相同，用灰色陰影做出外框立體感 */
+.brand__logo {
+  width: 72px;
+  height: 58px;
+  flex: 0 0 auto;
+  border-radius: 9px;
+  background: var(--ivory);
+  border: 1px solid rgba(70, 64, 52, .14);
+  box-shadow: 0 3px 9px rgba(60, 54, 40, .16), inset 0 1px 0 rgba(255, 255, 255, .5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px;
+}
+.brand__logo img { height: 100%; width: auto; max-width: 100%; }
+.brand__mark {
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  line-height: 1;
+  background: linear-gradient(135deg, #8a8f96, #eef1f4 45%, #9aa0a8 70%, #c8ccd2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.brand__name {
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  color: var(--ink);
+}
+.suffix {
+  font-size: 1.85rem;
   font-weight: 700;
   letter-spacing: .06em;
-  line-height: 1.3;
+  line-height: 1.35;
+  color: var(--ink);
 }
+
 .hero__tagline {
-  margin-top: 10px;
+  margin-top: 18px;
   font-size: var(--fs-lg);
   color: var(--dim);
   letter-spacing: .14em;
@@ -71,79 +119,19 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px;
-  margin-top: 18px;
+  margin-top: 16px;
 }
-.rule::before, .rule::after {
-  content: "";
-  height: 1px;
-  width: 64px;
-}
+.rule::before, .rule::after { content: ""; height: 1px; width: 64px; }
 .rule::before { background: linear-gradient(90deg, transparent, var(--gold)); }
 .rule::after  { background: linear-gradient(90deg, var(--gold), transparent); }
 .rule span { width: 7px; height: 7px; transform: rotate(45deg); background: var(--gold); }
 
-/* ── 兩間公司 ─────────────────────────────────────────── */
-.companies {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-  padding: clamp(18px, 4vw, 24px) clamp(18px, 4vw, 22px);
-}
-.company {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 13px;
-}
-/* Logo 徽章：底色與背景相同，用灰色陰影做出外框立體感 */
-.company__logo {
-  height: 104px;
-  width: 100%;
-  border-radius: 10px;
-  background: var(--ivory);
-  border: 1px solid rgba(70, 64, 52, .14);
-  box-shadow: 0 3px 10px rgba(60, 54, 40, .16),
-              inset 0 1px 0 rgba(255, 255, 255, .5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
-}
-.company__logo img { height: 100%; width: auto; max-width: 100%; }
-.company__logo-text {
-  font-size: 2.7rem;
-  font-weight: 700;
-  letter-spacing: .06em;
-  color: var(--ink);
-  line-height: 1;
-}
-.company__name { font-size: 1.12rem; font-weight: 700; }
-.company__tax  { font-size: .92rem; color: var(--dim); }
-.company__tax b { color: var(--ink); letter-spacing: .04em; }
-
 /* ── 共用資訊 ─────────────────────────────────────────── */
 .shared {
-  padding: 0 clamp(18px, 4vw, 22px) clamp(22px, 5vw, 28px);
+  padding: 0 clamp(18px, 4vw, 22px) clamp(20px, 5vw, 26px);
   display: flex;
   flex-direction: column;
   gap: 14px;
-}
-.divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: var(--gold);
-  font-size: .85rem;
-  letter-spacing: .4em;
-  padding-left: .4em;
-}
-.divider::before, .divider::after {
-  content: "";
-  height: 1px;
-  flex: 1;
-  background: var(--edge);
 }
 
 /* 聯絡大按鈕（電話 / 地址）—— 字級一致 */
@@ -183,12 +171,7 @@ body {
   padding: 20px;
   text-align: center;
 }
-.services__title {
-  font-size: 1.18rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  margin-bottom: 16px;
-}
+.services__title { font-size: 1.18rem; font-weight: 700; letter-spacing: .1em; margin-bottom: 16px; }
 .services__list {
   list-style: none;
   display: grid;
@@ -226,23 +209,32 @@ body {
   border: 1px solid var(--edge);
   box-shadow: none;
   cursor: default;
-  letter-spacing: .1em;
 }
 
-/* ── 底部 ─────────────────────────────────────────────── */
+/* ── 底部：統一編號 + 版權 ────────────────────────────── */
 .foot {
   text-align: center;
-  padding: 16px;
+  padding: 18px 16px;
   border-top: 1px solid var(--edge);
+}
+.foot__tax {
+  font-size: .95rem;
+  color: var(--dim);
+  letter-spacing: .03em;
+}
+.foot__tax b { color: var(--ink); font-weight: 700; }
+.foot__copy {
+  margin-top: 6px;
+  font-size: .82rem;
   color: #9a8f7a;
-  font-size: .84rem;
   letter-spacing: .05em;
 }
 
-/* ── 響應式：手機（兩家上下堆疊、服務單欄、字略放大）────── */
+/* ── 響應式：手機 ─────────────────────────────────────── */
 @media (max-width: 480px) {
   :root { --fs-base: 1.18rem; --fs-lg: 1.36rem; }
-  .companies { grid-template-columns: 1fr; }
+  .lockup { flex-direction: column; gap: 10px; }
+  .brands { align-items: flex-start; }
   .services__list { grid-template-columns: 1fr; }
-  .services__list li { border-bottom: 1px solid #ece2cd; }
+  .foot__tax { font-size: 1rem; }
 }
