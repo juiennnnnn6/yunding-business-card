@@ -67,6 +67,12 @@
     $("phoneText").textContent = shared.phone;
   }
 
+  // ── 傳真（僅顯示，不可撥打）──────────────────────────
+  if (shared.fax && shared.fax.trim()) {
+    $("faxText").textContent = shared.fax.trim();
+    $("faxBlock").hidden = false;
+  }
+
   // ── 地址（地圖導航）──────────────────────────────────
   if (shared.address) {
     $("addressText").textContent = shared.address;

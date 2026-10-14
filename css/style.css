@@ -158,6 +158,26 @@ body {
 .contact__label { font-size: .9rem; color: var(--dim); }
 .contact__value { font-weight: 700; font-size: var(--fs-lg); letter-spacing: .03em; line-height: 1.3; }
 
+/* 傳真（小資訊列） */
+.fax {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  margin-top: -6px;
+  color: var(--dim);
+  letter-spacing: .03em;
+}
+.fax__label {
+  font-size: .9rem;
+  color: var(--dim);
+}
+.fax__value {
+  font-weight: 700;
+  color: var(--ink);
+  font-size: 1.1rem;
+}
+
 /* 服務項目 */
 .services {
   background: var(--cream);
