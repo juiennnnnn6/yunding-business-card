@@ -27,6 +27,7 @@ window.SITE_CONFIG = {
       taxId: "17850315",
       logoType: "image",                // image = 用圖檔（由名片照片修復的向量 Logo）
       logoSrc: "images/yunzuan-logo.svg",
+      logoScale: 0.72,                  // 允鑽字標較實心，縮小讓兩顆視覺平衡（1=原大小）
     },
     {
       short: "允鼎",

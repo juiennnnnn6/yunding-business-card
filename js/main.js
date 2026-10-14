@@ -32,6 +32,7 @@
       const img = document.createElement("img");
       img.src = c.logoSrc;
       img.alt = (c.name || c.short || "") + " Logo";
+      if (c.logoScale) img.style.transform = "scale(" + c.logoScale + ")";
       logo.appendChild(img);
     }
     // 文字型公司（無圖檔）不再重複印一次字標；保留空 Logo 欄讓名字對齊
