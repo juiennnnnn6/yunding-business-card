@@ -156,7 +156,7 @@ body {
 }
 .contact__body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
 .contact__label { font-size: .9rem; color: var(--dim); }
-.contact__value { font-weight: 700; font-size: var(--fs-lg); letter-spacing: .03em; line-height: 1.3; }
+.contact__value { font-weight: 700; font-size: 1.16rem; letter-spacing: .03em; line-height: 1.3; }
 
 /* 傳真（電話卡內的次要資訊列） */
 .contact__sub {
@@ -196,7 +196,7 @@ body {
   min-height: 60px;
   background: var(--line);
   color: #fff;
-  font-size: var(--fs-lg);
+  font-size: 1.16rem;
   font-weight: 700;
   text-decoration: none;
   border-radius: 12px;
@@ -233,5 +233,7 @@ body {
   .lockup { flex-direction: column; gap: 10px; }
   .brands { align-items: flex-start; }
   .services__list { grid-template-columns: 1fr; }
+  .contact__value { font-size: 1.22rem; }
+  .line-btn { font-size: 1.22rem; }
   .foot__tax { font-size: 1rem; }
 }
