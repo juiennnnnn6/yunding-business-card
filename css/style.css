@@ -32,7 +32,7 @@ body {
   display: flex;
   justify-content: center;
   padding: clamp(16px, 4vw, 36px);
-  background: radial-gradient(1000px 500px at 50% 0, #fbf7ef, #efe7d6);
+  background: radial-gradient(1000px 520px at 50% 0, #cfcfcf, #a8a8a8);
   -webkit-font-smoothing: antialiased;
 }
 
