@@ -33,12 +33,8 @@
       img.src = c.logoSrc;
       img.alt = (c.name || c.short || "") + " Logo";
       logo.appendChild(img);
-    } else {
-      const mark = document.createElement("span");
-      mark.className = "brand__mark";
-      mark.textContent = c.logoText || c.short || "";
-      logo.appendChild(mark);
     }
+    // 文字型公司（無圖檔）不再重複印一次字標；保留空 Logo 欄讓名字對齊
 
     const nm = document.createElement("span");
     nm.className = "brand__name";
@@ -57,8 +53,11 @@
     lockup.appendChild(suffix);
   }
 
-  // 副標
-  $("siteTagline").textContent = cfg.siteTagline || "";
+  // 副標（以「‧」分隔的每段各自換行）
+  if (cfg.siteTagline) {
+    const lines = cfg.siteTagline.split("‧").map((s) => escapeHtml(s.trim())).filter(Boolean);
+    $("siteTagline").innerHTML = lines.join("<br>");
+  }
 
   // ── 電話（點擊撥打）──────────────────────────────────
   if (shared.phone) {
