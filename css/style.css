@@ -69,19 +69,14 @@ body {
   align-items: center;
   gap: 14px;
 }
-/* Logo 徽章：底色與背景相同，用灰色陰影做出外框立體感 */
+/* Logo 區（無外框，直接呈現） */
 .brand__logo {
   width: 72px;
   height: 58px;
   flex: 0 0 auto;
-  border-radius: 9px;
-  background: var(--ivory);
-  border: 1px solid rgba(70, 64, 52, .14);
-  box-shadow: 0 3px 9px rgba(60, 54, 40, .16), inset 0 1px 0 rgba(255, 255, 255, .5);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 7px;
 }
 .brand__logo img { height: 100%; width: auto; max-width: 100%; }
 .brand__mark {
