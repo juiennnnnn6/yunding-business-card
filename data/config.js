@@ -25,9 +25,8 @@ window.SITE_CONFIG = {
       short: "允鑽",
       name: "允鑽不鏽鋼企業社",
       taxId: "17850315",
-      logoType: "text",                 // text = 文字型 Logo（之後有圖檔改成 image）
-      logoText: "允鑽",
-      // 之後有圖檔時：logoType 改 "image"，並加 logoSrc: "images/yunzuan-logo.svg",
+      logoType: "image",                // image = 用圖檔（由名片照片修復的向量 Logo）
+      logoSrc: "images/yunzuan-logo.svg",
     },
     {
       short: "允鼎",
