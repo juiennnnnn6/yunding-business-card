@@ -72,7 +72,7 @@ window.SITE_CONFIG = {
     ],
 
     // LINE 連結（★拿到連結後填這裡，填了按鈕就會生效）
-    lineUrl: "",
+    lineUrl: "https://line.me/ti/p/T1c6WxH026",
   },
 
 };
