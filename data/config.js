@@ -14,16 +14,16 @@
 window.SITE_CONFIG = {
 
   // 標語（頁首副標）
-  siteTagline: "專業鐵件不鏽鋼施工 ‧ 品質信賴",
+  siteTagline: "專業鐵件不銹鋼施工 ‧ 品質信賴",
 
   // 兩家公司共用的行業別（只顯示一次）
-  companySuffix: "不鏽鋼企業社",
+  companySuffix: "不銹鋼企業社",
 
   // ── 兩間公司（short=短名、顯示在 Logo 旁；name=全名、用於版權列）──
   companies: [
     {
       short: "允鑽",
-      name: "允鑽不鏽鋼企業社",
+      name: "允鑽不銹鋼企業社",
       taxId: "17850315",
       logoType: "image",                // image = 用圖檔（由名片照片修復的向量 Logo）
       logoSrc: "images/yunzuan-logo.svg",
@@ -31,7 +31,7 @@ window.SITE_CONFIG = {
     },
     {
       short: "允鼎",
-      name: "允鼎不鏽鋼企業社",
+      name: "允鼎不銹鋼企業社",
       taxId: "61156036",
       logoType: "image",                // image = 用圖檔
       logoSrc: "images/yunding-logo.svg",
@@ -56,9 +56,9 @@ window.SITE_CONFIG = {
 
     // 專業服務
     services: [
-      "不鏽鋼客製化加工",
-      "不鏽鋼裝飾板與金屬飾面工程",
-      "不鏽鋼設計裝潢",
+      "不銹鋼客製化加工",
+      "不銹鋼裝飾板與金屬飾面工程",
+      "不銹鋼設計裝潢",
       "防盜門",
       "扶手",
       "欄杆",
