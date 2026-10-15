@@ -180,8 +180,8 @@ body {
 .services__list {
   list-style: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px 14px;
+  grid-template-columns: 1fr;
+  gap: 0;
 }
 .services__list li {
   font-size: 1.02rem;
