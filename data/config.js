@@ -45,7 +45,7 @@ window.SITE_CONFIG = {
 
     // 地圖搜尋用的「地標名稱」——用店家名稱定位最準（對應 Google 商家）
     // 若之後想改用精準地圖連結，把網址貼到下方 mapUrl（填了就優先用 mapUrl）
-    mapQuery: "允鼎不鏽鋼企業社",
+    mapQuery: "允鼎不銹鋼企業社",
     mapUrl: "",
 
     // 電話（點擊直接撥打）
