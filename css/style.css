@@ -184,10 +184,11 @@ body {
   gap: 0;
 }
 .services__list li {
-  font-size: 1.02rem;
-  padding: 6px 0;
+  font-size: 1.05rem;
+  padding: 12px 0;
   border-bottom: 1px solid #dddde0;
 }
+.services__list li:last-child { border-bottom: none; }
 
 /* LINE 按鈕 */
 .line-btn {
